@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 
 public class CharSelect extends JFrame {
     public String characterSelected = "";
+    Enemy enemyPlaceholder = null;
+    Hero heroPlaceholder = null;
+    ImageIcon enemyPortrait = null;
 
     public CharSelect() {
         setSize(500, 150);
@@ -48,120 +51,199 @@ public class CharSelect extends JFrame {
         panel.add(cid);
         panel.add(noctis);
 
+
+        int chosenMonster = (int) ((Math.random() * (7 - 1)) + 1);
+
+        switch (chosenMonster) {
+            case 1:
+                Enemy tonberry = new Enemy("Tonberry", 150, 10, 5);
+                ImageIcon tonberryIcon = new ImageIcon("C:\\Users\\Lionscastle\\Documents\\captsone-2\\assets\\tonberry8-b.jpg");
+                enemyPlaceholder = tonberry;
+                enemyPortrait = tonberryIcon;
+                break;
+            case 2:
+                Enemy cactaur = new Enemy("Cactuar", 200, 15, 10);
+                ImageIcon cactaurIcon = new ImageIcon("C:\\Users\\Lionscastle\\Documents\\captsone-2\\assets\\FFRK_Cactuar_FFXIII_Boss.jpg");
+                enemyPlaceholder = cactaur;
+                enemyPortrait = cactaurIcon;
+                break;
+            case 3:
+                Enemy marlboro = new Enemy("Marlboro", 250, 15, 10);
+                ImageIcon marlboroIcon = new ImageIcon("C:\\Users\\Lionscastle\\Documents\\captsone-2\\assets\\Malboro_Scan.jpg");
+                enemyPlaceholder = marlboro;
+                enemyPortrait = marlboroIcon;
+                break;
+            case 4:
+                Enemy flan = new Enemy("Flan", 175, 15, 5);
+                ImageIcon flanIcon = new ImageIcon("C:\\Users\\Lionscastle\\Documents\\captsone-2\\assets\\dustin-halstex-sprite-flan-comparison-october-2nd-2014.jpg");
+                enemyPlaceholder = flan;
+                enemyPortrait = flanIcon;
+                break;
+            case 5:
+                Enemy bomb = new Enemy("Bomb", 125, 20, 5);
+                ImageIcon bombIcon = new ImageIcon("C:\\Users\\Lionscastle\\Documents\\captsone-2\\assets\\FF4_PSP_Bomb_Field.jpg");
+                enemyPlaceholder = bomb;
+                enemyPortrait = bombIcon;
+                break;
+            case 6:
+                Enemy ogre = new Enemy("Ogre", 300, 25, 15);
+                ImageIcon ogreIcon = new ImageIcon("C:\\Users\\Lionscastle\\Documents\\captsone-2\\assets\\ogre-sprite.jpg");
+                enemyPlaceholder = ogre;
+                enemyPortrait = ogreIcon;
+                break;
+        }
+
+        System.out.println(enemyPlaceholder.name);
+
+        System.out.println(chosenMonster);
+
         wol.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Warrior of Light";
+                Hero warriorOfLight = new Hero ("Warrior of Light", 250, 20, 20, 10);
+                heroPlaceholder = warriorOfLight;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         firion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Firion";
+                Hero firion = new Hero("Firion", 125, 15, 15, 15);
+                heroPlaceholder = firion;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         onionKnight.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Onion Knight";
+                Hero onionKnight = new Hero("Onion Knight", 115, 15, 15, 15);
+                heroPlaceholder = onionKnight;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         cecil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Cecil";
+                Hero cecil = new Hero("Cecil",225, 20, 15, 15);
+                heroPlaceholder = cecil;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         bartz.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Bartz";
+                Hero bartz = new Hero("Bartz",120, 15, 10, 15);
+                heroPlaceholder = bartz;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         terra.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Terra";
+                Hero terra = new Hero("Terra",115, 10, 10, 25);
+                heroPlaceholder = terra;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         cloud.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Cloud Strife";
+                Hero cloud = new Hero("Cloud", 200, 25, 20, 15);
+                heroPlaceholder = cloud;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         squall.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Squall Leonhart";
+                Hero squall = new Hero("Squall", 200, 20, 15, 15);
+                heroPlaceholder = squall;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         zidane.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Zidane Tribal";
+                Hero zidane = new Hero("Zidane", 150, 15, 10, 15);
+                heroPlaceholder = zidane;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         tidus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Tidus";
+                Hero tidus = new Hero("Tidus", 175, 15, 10, 10);
+                heroPlaceholder = tidus;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         shantotto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Shantotto";
+                Hero shantotto = new Hero("Shantotto", 100, 10, 10, 30);
+                heroPlaceholder = shantotto;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         vaan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Vaan";
+                Hero vaan = new Hero("Vaan",125, 15, 10, 10);
+                heroPlaceholder = vaan;
+                setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         lightining.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Lightning";
+                Hero lightning = new Hero("Lightning", 175, 15, 15, 15);
+                heroPlaceholder = lightning;
+                setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         cid.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Cid";
+                Hero cid = new Hero("Cid", 150, 20, 15, 15);
+                heroPlaceholder = cid;
+                setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
         noctis.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                characterSelected = "Noctis";
+                Hero noctis = new Hero("Noctis", 200, 20, 15, 15);
+                heroPlaceholder = noctis;
                 setVisible(false);
+                Game g = new Game(heroPlaceholder, enemyPlaceholder, enemyPortrait);
             }
         });
 
