@@ -1,3 +1,5 @@
+package Entities.Hero;
+
 public class Hero {
     public String name;
     public int health;

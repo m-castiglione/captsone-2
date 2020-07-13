@@ -1,3 +1,6 @@
+import Entities.Enemy.Enemy;
+import Entities.Hero.Hero;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
