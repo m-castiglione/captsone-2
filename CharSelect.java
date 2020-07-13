@@ -37,6 +37,25 @@ public class CharSelect extends JFrame {
         JButton cid = new JButton("Cid");
         JButton noctis = new JButton("Noctis");
 
+        JMenuBar menuBar = new JMenuBar();
+        JMenu instructionsMenu = new JMenu("Instructions");
+        JMenuItem instructionsButton = new JMenuItem("Instructions");
+
+        menuBar.add(instructionsMenu);
+        instructionsMenu.add(instructionsButton);
+
+        setJMenuBar(menuBar);
+
+        instructionsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "\n" +
+                        "You start out with a character select screen by having 15 characters that represent the 15 main line Final Fantasy games.\n" +
+                        "Each character has their own stats, attacks, magic, limit breaker, and defensive moves. You are then thrown into an encounter\n" +
+                        "with a monster that are staple within the Final Fantasy franchise. You can check the stats in the menu bar or read these instructions.\n" +
+                        "From here, you fight the monster to either defeat it or have it defeat you. If your health comes lower than 25%, you can use your special attack.");
+            }
+        });
 
         panel.add(wol);
         panel.add(firion);

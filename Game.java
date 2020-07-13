@@ -51,7 +51,24 @@ public class Game extends JFrame {
         statsMenu.add(playerStatsButton);
         statsMenu.add(enemyStatsButton);
 
+        JMenu instructionsMenu = new JMenu("Instructions");
+        JMenuItem instructionsButton = new JMenuItem("Instructions");
+
+        menuBar.add(instructionsMenu);
+        instructionsMenu.add(instructionsButton);
+
         setJMenuBar(menuBar);
+
+        instructionsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "\n" +
+                        "You start out with a character select screen by having 15 characters that represent the 15 main line Final Fantasy games.\n" +
+                        "Each character has their own stats, attacks, magic, limit breaker, and defensive moves. You are then thrown into an encounter\n" +
+                        "with a monster that are staple within the Final Fantasy franchise. You can check the stats in the menu bar or read these instructions.\n" +
+                        "From here, you fight the monster to either defeat it or have it defeat you. If your health comes lower than 25%, you can use your special attack.");
+            }
+        });
         
         playerStatsButton.addActionListener(new ActionListener() {
             @Override
@@ -114,6 +131,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Firion":
                 Firion firion = new Firion();
@@ -121,6 +139,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Onion Knight":
                 OnionKnight onionKnight = new OnionKnight();
@@ -128,6 +147,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Cecil":
                 Cecil cecil = new Cecil();
@@ -135,6 +155,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Bartz":
                 Bartz bartz = new Bartz();
@@ -142,6 +163,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Terra":
                 Terra terra = new Terra();
@@ -149,6 +171,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Cloud":
                 Cloud cloud = new Cloud();
@@ -156,6 +179,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Squall":
                 Squall squall = new Squall();
@@ -163,6 +187,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Zidane":
                 Zidane zidane = new Zidane();
@@ -170,6 +195,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Tidus":
                 Tidus tidus = new Tidus();
@@ -177,6 +203,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Shantotto":
                 Shantotto shantotto = new Shantotto();
@@ -184,6 +211,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Vaan":
                 Vaan vaan = new Vaan();
@@ -191,6 +219,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Lightning":
                 Lightning lightning = new Lightning();
@@ -198,6 +227,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Cid":
                 Cid cid  = new Cid();
@@ -205,6 +235,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.magic * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, enemyHealth);
                 break;
             case "Noctis":
                 Noctis noctis = new Noctis();
@@ -225,7 +256,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(warriorOfLight.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Firion":
                 Firion firion = new Firion();
@@ -233,7 +264,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(firion.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Onion Knight":
                 OnionKnight onionKnight = new OnionKnight();
@@ -241,7 +272,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(onionKnight.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Cecil":
                 Cecil cecil = new Cecil();
@@ -249,7 +280,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(cecil.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Bartz":
                 Bartz bartz = new Bartz();
@@ -257,7 +288,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(bartz.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Terra":
                 Terra terra = new Terra();
@@ -265,7 +296,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(terra.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Cloud":
                 Cloud cloud = new Cloud();
@@ -273,7 +304,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(cloud.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Squall":
                 Squall squall = new Squall();
@@ -281,7 +312,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(squall.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Zidane":
                 Zidane zidane = new Zidane();
@@ -289,7 +320,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(zidane.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Tidus":
                 Tidus tidus = new Tidus();
@@ -297,7 +328,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(tidus.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Shantotto":
                 Shantotto shantotto = new Shantotto();
@@ -306,6 +337,7 @@ public class Game extends JFrame {
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
                 checkEndGame(shantotto.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Vaan":
                 Vaan vaan = new Vaan();
@@ -314,6 +346,7 @@ public class Game extends JFrame {
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
                 checkEndGame(vaan.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Lightning":
                 Lightning lightning = new Lightning();
@@ -321,7 +354,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(lightning.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Cid":
                 Cid cid = new Cid();
@@ -329,7 +362,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(cid.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Noctis":
                 Noctis noctis = new Noctis();
@@ -337,7 +370,7 @@ public class Game extends JFrame {
                 chosenEnemy.health -= chosenHero.strength * 2;
                 enemyHealthLabel.setText("Enemy Health: " + enemyHealth);
                 enemyAttack(chosenEnemy);
-                checkEndGame(noctis.health, enemyHealth);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
         }
     }
@@ -374,6 +407,7 @@ public class Game extends JFrame {
     public void playerDefend() {
         JOptionPane.showMessageDialog(null, "As you brace yourself, you take reduced damage. You take " + chosenEnemy.strength + " damage");//do damage calculation
         chosenHero.health -= chosenEnemy.strength;
+        checkEndGame(chosenHero.health, chosenEnemy.health);
     }
 
     public void playerSpecialAttack(Hero hero, JLabel enemyHealth) {
@@ -383,90 +417,105 @@ public class Game extends JFrame {
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Firion":
                 JOptionPane.showMessageDialog(null, "Using your arsenal of weapons, you pull out your Greater Lightning Rod and cast Thundaga to your enemy for a damage of " + hero.strength * 3); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Onion Knight":
                 JOptionPane.showMessageDialog(null, "Calling upon the wisdom and courage of the Knight job, you use your Ultimate Weapon to slash the enemy for " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Cecil":
                 JOptionPane.showMessageDialog(null, "Using your Paladin's Might, you stab the enemy with your Holy polearm causing " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Bartz":
                 JOptionPane.showMessageDialog(null, "Changing to your Beast Tamer job, you take a ride from a Chocobo and with your Chicken Knife in hand, slash the enemy for " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Terra":
                 JOptionPane.showMessageDialog(null, "You use your magical might and turn into an Esper casting Aeroga! You gust away your enemy by " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Cloud":
                 JOptionPane.showMessageDialog(null, "With your massive Buster Sword, your do your signature move, Omnislash, causing " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Squall":
                 JOptionPane.showMessageDialog(null, "Using your gunblade, you do a Grand Slash at the enemy for " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Zidane":
                 JOptionPane.showMessageDialog(null, "You enter into an aggressive Trance and attack the enemy causing " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Tidus":
                 JOptionPane.showMessageDialog(null, "Using your Blitzball skills, you launch a Blitzball causing " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Shantotto":
                 JOptionPane.showMessageDialog(null, "Using your magical rod, you cast Greater Meteor! Doing a total damage of " + hero.strength * 3); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Vaan":
                 JOptionPane.showMessageDialog(null, "Using a schimtar and flame, you slice with a fiery attack dealing " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Lightning":
                 JOptionPane.showMessageDialog(null, "You call upon Odin, slicing the enemy down by " + hero.strength * 3); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Cid":
                 JOptionPane.showMessageDialog(null, "After calling your Magitek Armor, you shoot a Fira Laser at your enemy causing " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
             case "Noctis":
                 JOptionPane.showMessageDialog(null, "Using the royal armory and the Amiger system, you warp strike into your enemy causing " + hero.strength * 3 + " damage"); //do damage calculation
                 chosenEnemy.health -= hero.strength * 3;
                 enemyHealth.setText("Enemy Health: " + chosenEnemy.health);
                 enemyAttack(chosenEnemy);
+                checkEndGame(chosenHero.health, chosenEnemy.health);
                 break;
         }
     }
