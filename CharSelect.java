@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CharSelect extends JFrame {
-    public String characterSelected = "";
     Enemy enemyPlaceholder = null;
     Hero heroPlaceholder = null;
     ImageIcon enemyPortrait = null;
